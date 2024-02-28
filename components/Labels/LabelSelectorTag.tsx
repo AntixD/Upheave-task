@@ -1,8 +1,6 @@
 "use client";
 
-import { selectedLabelsAtom } from "@/lib/state";
 import type { Label } from "@prisma/client";
-import { useAtom } from "jotai";
 import { twMerge } from "tailwind-merge";
 
 function LabelSelectorTag({

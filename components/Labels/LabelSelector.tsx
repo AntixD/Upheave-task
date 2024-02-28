@@ -1,11 +1,8 @@
 "use client";
 
 import type { Label } from "@prisma/client";
-
 import { selectedLabelsAtom } from "@/lib/state";
-
 import { useAtom } from "jotai";
-
 import { LABEL_ALL_ID } from "@/lib/constants";
 import LabelSelectorTag from "./LabelSelectorTag";
 

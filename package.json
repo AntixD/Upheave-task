@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && prisma generate && echo 'Prisma generation completed' || echo 'Prisma generation failed'",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
-    "jotai": "^2.6.5",
+    "jotai": "^2.7.0",
     "next": "14.1.0",
     "pg": "^8.11.3",
     "prisma": "^5.10.2",

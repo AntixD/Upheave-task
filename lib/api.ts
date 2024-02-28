@@ -3,8 +3,10 @@
 import prisma from "@/server/db";
 
 export async function getMeals() {
-  const Meals = await prisma.meal.findMany();
-  return Meals;
+  const meals = await prisma.meal.findMany({
+    include: { drinks: true, labels: true },
+  });
+  return meals;
 }
 
 export async function getLabels() {

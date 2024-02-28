@@ -18,15 +18,15 @@ model Meal {
     title   String
     starter String
     desert  String
-    price   Decimal
+    price   Float
     img     String
     labels  Label[]
     drinks  Drink[]
 }
 
 model Drink {
-    id    String  @id @default(cuid())
+    id    String @id @default(cuid())
     title String
-    price Decimal
+    price Float
     meal  Meal[]
 }
