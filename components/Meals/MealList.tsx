@@ -5,6 +5,7 @@ import MealCard from "./MealCard";
 import { selectedLabelsAtom } from "@/lib/state";
 import { useAtom } from "jotai";
 import { LABEL_ALL_ID } from "@/lib/constants";
+import { Suspense } from "react";
 
 function MealList({ meals }: { meals: MealDrinkLabel[] }) {
   const [selectedLabels] = useAtom(selectedLabelsAtom);
@@ -20,9 +21,11 @@ function MealList({ meals }: { meals: MealDrinkLabel[] }) {
 
   return (
     <>
-      {filterMeals().map((meal) => {
-        return <MealCard key={meal.id} meal={meal} />;
-      })}
+      <Suspense fallback={<div>Loading meals...</div>}>
+        {filterMeals().map((meal) => {
+          return <MealCard key={meal.id} meal={meal} />;
+        })}
+      </Suspense>
     </>
   );
 }

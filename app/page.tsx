@@ -1,5 +1,6 @@
 import LabelSelector from "@/components/Labels/LabelSelector";
 import MealList from "@/components/Meals/MealList";
+import PassengerSelection from "@/components/Passanger/PassengerSelection";
 import { getLabels, getMeals } from "@/lib/api";
 import { LABEL_ALL, LABEL_ALL_ID } from "@/lib/constants";
 
@@ -13,7 +14,9 @@ export default async function Home() {
         <LabelSelector labels={labels} />
         <MealList meals={meals} />
       </div>
-      <div>Select meal</div>
+      <div>
+        <PassengerSelection />
+      </div>
     </main>
   );
 }
