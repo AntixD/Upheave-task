@@ -20,13 +20,13 @@ function MealList({ meals }: { meals: MealDrinkLabel[] }) {
   }
 
   return (
-    <>
+    <div className="grid grid-cols-2 gap-8">
       <Suspense fallback={<div>Loading meals...</div>}>
         {filterMeals().map((meal) => {
           return <MealCard key={meal.id} meal={meal} />;
         })}
       </Suspense>
-    </>
+    </div>
   );
 }
 

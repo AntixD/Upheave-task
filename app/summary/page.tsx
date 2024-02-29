@@ -1,9 +1,12 @@
-import Image from "next/image";
+import Summary from "@/components/Summary/Summary";
+import React from "react";
 
-export default function Summary() {
+function page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      summary
-    </main>
+    <>
+      <Summary />
+    </>
   );
 }
+
+export default page;

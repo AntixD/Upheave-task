@@ -27,7 +27,7 @@ function LabelSelector({ labels }: { labels: Label[] }) {
   }
 
   return (
-    <div className="flex flex-row gap-2">
+    <div className="flex flex-row gap-2 h-12">
       {labels.map((label) => {
         return (
           <LabelSelectorTag

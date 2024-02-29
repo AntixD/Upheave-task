@@ -30,3 +30,9 @@ model Drink {
     price Float
     meal  Meal[]
 }
+
+model User {
+    id       String @id @default(cuid())
+    username String @unique
+    password String
+}

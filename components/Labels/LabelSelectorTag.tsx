@@ -17,8 +17,8 @@ function LabelSelectorTag({
     <button
       onClick={() => handleLabelClicked(label.id)}
       className={twMerge(
-        "py-2 px-4 rounded-full border-2 border-gray-600",
-        isLabelSelected(label.id) ? "border-purple-400 bg-purple-400/10" : ""
+        "py-2 px-4 rounded-full border border-gray-500",
+        isLabelSelected(label.id) ? "border-indigo-500 bg-indigo-500/10" : ""
       )}
     >
       {label.label}
