@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/next-auth";
 import MealAdmin from "@/components/Admin/MealAdmin";
 import { getMeal } from "@/lib/api";
 
