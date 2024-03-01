@@ -1,11 +1,12 @@
 "use client";
 
-import { MealDrinkLabel, MealWithDrinks } from "@/types";
+import { MealDrinkLabel } from "@/types";
 import MealCard from "./MealCard";
 import { selectedLabelsAtom } from "@/lib/state";
 import { useAtom } from "jotai";
 import { LABEL_ALL_ID } from "@/lib/constants";
 import { Suspense } from "react";
+import React from "react";
 
 function MealList({ meals }: { meals: MealDrinkLabel[] }) {
   const [selectedLabels] = useAtom(selectedLabelsAtom);
@@ -30,4 +31,4 @@ function MealList({ meals }: { meals: MealDrinkLabel[] }) {
   );
 }
 
-export default MealList;
+export default React.memo(MealList);
