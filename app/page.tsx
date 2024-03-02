@@ -3,7 +3,7 @@ import LabelSelector from "@/components/Labels/LabelSelector";
 import MealList from "@/components/Meals/MealList";
 import PassengerSelection from "@/components/Passanger/PassengerSelection";
 import { getLabels, getMeals } from "@/lib/api";
-import { LABEL_ALL, LABEL_ALL_ID } from "@/lib/constants";
+import { LABEL_ALL } from "@/lib/constants";
 
 export default async function Home() {
   const meals = await getMeals();
