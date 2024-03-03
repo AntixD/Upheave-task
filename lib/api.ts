@@ -1,19 +1,20 @@
 "use server";
 
-import type { Drink, Meal, User } from "@prisma/client";
-
+import type { User } from "@prisma/client";
 import prisma from "@/server/db";
 
 import bcrypt from "bcrypt";
 import { redirect } from "next/navigation";
 import { formData } from "@/types";
+import { cache } from "react";
 
-export async function getMeals() {
+export const getMeals = cache(async () => {
   const meals = await prisma.meal.findMany({
     include: { drinks: true, labels: true },
   });
+
   return meals;
-}
+});
 
 export async function getMeal() {
   const meals = await prisma.meal.findMany();

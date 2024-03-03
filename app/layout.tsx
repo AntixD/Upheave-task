@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { JotaiProvider } from "@/lib/state";
-import SessionWrapper from "@/components/SessionWrapper/SessionWrapper";
+import Wrappers from "@/components/Wrappers/Wrappers";
 import { twMerge } from "tailwind-merge";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,9 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={twMerge(inter.className, "overflow-x-hidden")}>
-        <SessionWrapper>
-          <JotaiProvider>{children}</JotaiProvider>
-        </SessionWrapper>
+        <Wrappers>{children}</Wrappers>
       </body>
     </html>
   );

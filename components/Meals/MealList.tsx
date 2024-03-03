@@ -7,9 +7,21 @@ import { useAtom } from "jotai";
 import { LABEL_ALL_ID } from "@/lib/constants";
 import { Suspense } from "react";
 import React from "react";
+import { getMeals } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
 
-function MealList({ meals }: { meals: MealDrinkLabel[] }) {
+function MealList({ meals: data }: { meals: MealDrinkLabel[] }) {
   const [selectedLabels] = useAtom(selectedLabelsAtom);
+
+  const { data: meals } = useQuery({
+    queryKey: ["meals"],
+    queryFn: () => getMeals(),
+    initialData: data,
+    refetchInterval: 5000,
+    refetchOnWindowFocus: true,
+  });
+
+  if (!meals) return <div>Loading ...</div>;
 
   function filterMeals() {
     if (selectedLabels.includes(LABEL_ALL_ID)) return meals;

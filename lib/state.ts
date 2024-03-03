@@ -1,7 +1,6 @@
 "use client";
 
 import { atom } from "jotai";
-import { Provider } from "jotai";
 import { LABEL_ALL_ID } from "./constants";
 import { Passenger } from "@/types";
 import { atomWithStorage } from "jotai/utils";
@@ -20,11 +19,3 @@ export const passengersAtom = atomWithStorage<Passenger[]>("Passengers", [
 ]);
 
 export const selectedPassangerAtom = atom<string>("Adult passenger 1");
-
-interface Props extends React.PropsWithChildren {}
-
-export function JotaiProvider({ children }: Props) {
-  return <Provider>{children}</Provider>;
-}
-
-export type { Props as JotaiProviderProps };
