@@ -3,6 +3,7 @@
 import { passengersAtom, selectedPassangerAtom } from "@/lib/state";
 import { useAtom } from "jotai";
 import { useRouter } from "next/navigation";
+import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 function PassengerSelection() {
@@ -33,23 +34,10 @@ function PassengerSelection() {
     });
   }
 
-  const selectedPassengerObj = passangers.find(
-    (person) => person.id === selectedPassanger
+  const selectedPassengerObj = useMemo(
+    () => passangers.find((person) => person.id === selectedPassanger),
+    [passangers, selectedPassanger]
   );
-
-  function getSelectedMealsText(passangerId: string) {
-    const selectedMeals = passangers.find(
-      (person) => person.id === passangerId
-    )!.meals;
-
-    if (selectedMeals.length > 0) {
-      return `${selectedMeals.length} meal${
-        selectedMeals.length > 1 ? "s" : ""
-      } selected.`;
-    } else {
-      return `No meals selected.`;
-    }
-  }
 
   function getSelectedPrice(passangerId: string) {
     const selectedMeals = passangers.find(

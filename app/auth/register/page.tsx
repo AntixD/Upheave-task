@@ -3,7 +3,6 @@ import { registerUser } from "@/lib/api";
 import { getServerSession } from "next-auth/next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { useState } from "react";
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
